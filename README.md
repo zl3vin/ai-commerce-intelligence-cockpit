@@ -1,195 +1,385 @@
-# NORTHWEAR — AI Commerce Intelligence Cockpit
+# AI Commerce Intelligence Cockpit
 
-Ein Portfolio-Analytics-Dashboard, das klassische E-Commerce-KPIs mit AI/GEO-Visibility-Intelligence
-kombiniert: Wie sichtbar ist eine Marke, wenn Kund:innen nicht mehr Google fragen, sondern ChatGPT,
-Gemini oder Perplexity?
+**E-Commerce Performance meets AI Visibility Intelligence.**
 
-> ⚠️ **Synthetic Demo Data.** Alle Zahlen in diesem Projekt sind simuliert. NORTHWEAR ist keine reale
-> Marke. Es werden keine echten Unternehmens-, Kunden- oder AI-Daten verwendet.
+A portfolio analytics project that combines traditional e-commerce KPIs with AI/GEO visibility measurement, prompt tracking, competitor intelligence, citation analysis and rule-based actionable insights.
 
----
+**Live Demo:**
+https://ai-commerce-intelligence-cockpit.vercel.app/
 
-## Inhaltsverzeichnis
-
-- [Problem](#problem)
-- [Lösung](#lösung)
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [KPI-Definitionen](#kpi-definitionen)
-- [Custom Score — Methodik](#custom-score--methodik)
-- [Datenmodell](#datenmodell)
-- [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [Deployment (Vercel)](#deployment-vercel)
-- [Methodische Leitplanken](#methodische-leitplanken)
-- [Future Roadmap](#future-roadmap)
+> **Synthetic Demo Data:** NORTHWEAR is a fictional D2C brand. All commerce and AI visibility measurements in this project are simulated for portfolio and demonstration purposes. No live ChatGPT, Gemini or Perplexity measurements are presented as real company data.
 
 ---
 
-## Problem
+## Overview
 
-E-Commerce-Teams messen seit Jahren Google-Rankings, SEO-Traffic und Ads-Performance. Aber ein wachsender
-Teil der Kaufentscheidungen entsteht heute in Konversationen mit AI-Assistenten — "Welche nachhaltige
-Outdoor-Jacke passt zu mir?", "Northwear vs. Patagonia — was ist besser?". Klassische Analytics-Tools
-(GA4, Shopify-Dashboards) machen diese neue Sichtbarkeitsebene nicht sichtbar. Marken wissen häufig nicht:
+Traditional e-commerce analytics answer questions such as:
 
-- Werden sie überhaupt von ChatGPT, Gemini oder Perplexity genannt?
-- Werden sie aktiv **empfohlen**, oder nur beiläufig erwähnt?
-- Welche Quellen zitieren die AI-Systeme, wenn sie über die Marke sprechen?
-- Wie schneidet man im Vergleich zu direkten Wettbewerbern ab?
+* How much revenue did the shop generate?
+* Which channels perform best?
+* What is the conversion rate?
+* Which products drive sales?
 
-## Lösung
+But customer discovery is increasingly happening inside AI assistants.
 
-Das **AI Commerce Intelligence Cockpit** bringt klassische Commerce-KPIs und eine neue
-AI-Visibility-Ebene in ein gemeinsames Dashboard:
+This project explores an additional question:
 
-1. **Commerce-Analytics** — Umsatz, Sessions, Conversion, ROAS, Funnel, Retouren, je Channel/Monat.
-2. **AI-Visibility-Analytics** — 100 realistische Buyer-Prompts, gemessen über 3 Plattformen mit je
-   3 Wiederholungs-Runs (900 Einzelmessungen), inkl. Mention/Recommendation/Citation Rate, Position,
-   Share of Voice und einem transparent dokumentierten Custom Score.
-3. **Intelligence Engine** — regelbasierte Insights, die konkrete Findings mit Evidenz und empfohlenen
-   Maßnahmen verknüpfen (kein Blackbox-ML, jede Aussage ist nachvollziehbar aus den Rohdaten ableitbar).
+> **How visible is a brand when customers ask AI systems for products, recommendations, comparisons and purchase advice?**
 
-Bewusst **keine** kausale Verknüpfung "AI Visibility → mehr Umsatz" — dafür fehlen echte Referral-Daten
-(siehe [Methodische Leitplanken](#methodische-leitplanken)).
+The **AI Commerce Intelligence Cockpit** combines both perspectives in one dashboard.
 
-## Features
+---
 
-| View | Beschreibung |
-|---|---|
-| **Overview** | Executive-Zusammenfassung: Commerce-KPIs, Cockpit-Score-Gauge, Plattform- & Prompt-Gruppen-Vergleich, Top-Competitor-SOV, Top-AI-Insights |
-| **Commerce** | Umsatz-/Order-Trend, Funnel (Sessions → Order), Channel-Performance, Retourenentwicklung — filterbar nach Monat & Channel |
-| **AI Visibility** | KPIs (Score, Mention/Recommendation/Citation Rate, Ø Position, Share of Voice), Plattformvergleich, Prompt-Gruppen-Vergleich, Run-Volatility/Stability — filterbar nach Platform, Prompt Group, Measurement Date, Run |
-| **Prompts** | Alle 100 Buyer-Prompts durchsuchbar & filterbar (Gruppe, Funnel Stage, Priority, Kategorie), sortierbare Tabelle, aufklappbare Detailansicht mit allen Einzel-Runs je Prompt |
-| **Competitors** | AI Share of Voice im Wettbewerbsvergleich, je Plattform getrennt dargestellt, sortierbares Ranking |
-| **Sources** | Welche Domains werden von AI-Systemen zitiert (Owned/Community/Third-party/Video), Plattformverteilung, konkrete Source-Opportunities |
-| **AI Insights** | Regelbasierte Findings mit Finding → Evidence → Recommended Action, filterbar nach Priority/Platform/Prompt Group/Typ |
-| **Methodology** | Vollständige Dokumentation der Scoring-Gewichtung, methodische Leitplanken, ehrlicher Business-Impact-Status |
+## Live Dashboard
 
-Weitere Eigenschaften:
-- Vollständig responsive (Mobile-Drawer-Navigation, kein horizontales Layout-Brechen)
-- Sortierbare Tabellen, konsistente Such-/Filter-Komponenten
-- "Synthetic Demo Data"-Badge durchgängig sichtbar
-- Info-Tooltips an allen erklärungsbedürftigen KPIs
+**Open the application:**
+https://ai-commerce-intelligence-cockpit.vercel.app/
+
+The dashboard contains seven main areas:
+
+* Overview
+* Commerce
+* AI Visibility
+* Prompts
+* Competitors
+* Sources
+* AI Insights
+
+---
 
 ## Screenshots
 
-> _Platzhalter — Screenshots nach Deployment ergänzen._
+### Executive Overview
 
-| Overview | AI Visibility | Prompts |
-|---|---|---|
-| `docs/screenshot-overview.png` | `docs/screenshot-ai-visibility.png` | `docs/screenshot-prompts.png` |
+![Executive Overview](screenshots/overview.png)
 
-## KPI-Definitionen
+### AI Visibility Intelligence
 
-**Commerce**
-- **Revenue** — Bruttoumsatz im Betrachtungszeitraum.
-- **Net Revenue** — Umsatz abzüglich Retourenwert.
-- **Conversion Rate** — Orders ÷ Sessions.
-- **AOV** — Average Order Value = Umsatz ÷ Orders.
-- **ROAS** — Return on Ad Spend = Umsatz ÷ Marketing-Spend.
-- **Return Rate** — Retouren ÷ Orders.
+![AI Visibility](screenshots/ai-visibility.png)
 
-**AI Visibility**
-- **Mention Rate** — Anteil AI-Antworten, in denen NORTHWEAR überhaupt genannt wird.
-- **Recommendation Rate** — Anteil Antworten, in denen NORTHWEAR aktiv empfohlen wird (stärkeres Signal als reine Nennung).
-- **Citation Rate** — Anteil Antworten mit Quellenangabe zu einer NORTHWEAR-URL. **Nicht gleichzusetzen mit Mention Rate** — eine Marke kann genannt, aber nicht zitiert werden, oder umgekehrt.
-- **Average Position** — Ø Rangposition von NORTHWEAR in Antworten, in denen die Marke genannt wird.
-- **AI Share of Voice (SOV)** — Anteil der NORTHWEAR-Nennungen an allen Markennennungen in den betrachteten Antworten.
+### Prompt Intelligence
 
-## Custom Score — Methodik
+![Prompt Intelligence](screenshots/prompts.png)
 
-Der **NORTHWEAR Cockpit Score** ist ein **selbst definierter Custom Score dieses Portfolio-Projekts —
-kein Branchenstandard und keine Kennzahl eines realen Anbieters.**
+### AI Insights
 
-```
-Visibility Score = 0.30 × Mention Rate
-                  + 0.25 × Recommendation Rate
-                  + 0.20 × Share of Voice
-                  + 0.15 × Citation Rate
-                  + 0.10 × Position Score
-```
-
-`Position Score` normalisiert die Ø-Position auf eine 0–1-Skala (bessere Position → höherer Score).
-Alle Messungen basieren auf 3 wiederholten Runs je Prompt und Plattform (ChatGPT, Gemini, Perplexity),
-um einzelne AI-Antworten nicht als stabiles Ranking misszuverstehen — Volatility/Stability wird deshalb
-als eigenes Signal ausgewiesen. Details: [`/methodology`](src/app/methodology/page.tsx) im Dashboard.
-
-## Datenmodell
-
-Alle Daten liegen als CSV/JSON im gelieferten Datenpaket vor und werden beim Build in `/data/*.json`
-konvertiert (`src/lib/data/load.ts` ist die einzige Stelle, die die Rohdaten kennt):
-
-| Datei | Inhalt |
-|---|---|
-| `products.csv` | 24 Produkte (Kategorie, Preis, Rating, Lagerbestand) |
-| `commerce_performance.csv` | 60 Zeilen: 12 Monate × 5 Channels (Sessions, Orders, Revenue, ROAS, Retouren) |
-| `ai_prompts.csv` | 100 Buyer-Prompts (Gruppe, Funnel Stage, Priority, Zielkategorie) |
-| `ai_visibility_results.csv` | 900 Einzelmessungen (100 Prompts × 3 Plattformen × 3 Runs) |
-| `ai_insights.csv` / `intelligence_engine.json` | Regelbasierte Insights inkl. Evidence & Recommended Action |
-| `prompt_volatility.csv` | Stabilität je Prompt/Plattform über die 3 Runs |
-| `prompt_opportunities.csv` | Aggregierte Opportunity-Scores je Prompt |
-| `dashboard_aggregates.json` | Vorab berechnete Aggregate (Overview, Plattformen, Competitors, Sources, Commerce-Monatswerte) |
-
-TypeScript-Typen für alle Modelle: [`src/types/index.ts`](src/types/index.ts).
-
-## Tech Stack
-
-- **Next.js 14** (App Router) + **TypeScript** (strict mode)
-- **Tailwind CSS** — eigenes Design-System (Navy/Anthracite-Sidebar, restrained Akzentfarben)
-- **Recharts** — Trend-, Bar- und Vergleichs-Charts
-- **lucide-react** — Icons
-- Statische JSON-Daten, kein Backend, keine Datenbank (siehe Roadmap)
-
-## Installation
-
-```bash
-npm install
-npm run dev
-# → http://localhost:3000
-```
-
-Production-Build lokal testen:
-
-```bash
-npm run build
-npm run start
-```
-
-## Deployment (Vercel)
-
-Das Projekt ist ohne weitere Konfiguration auf Vercel deploybar (reines Next.js-Projekt, keine
-Umgebungsvariablen, keine externen API-Keys nötig):
-
-1. Repository zu GitHub pushen
-2. In Vercel „Import Project" → Repository auswählen
-3. Framework Preset: **Next.js** (wird automatisch erkannt)
-4. Deploy — fertig.
-
-## Methodische Leitplanken
-
-- Mention Rate und Citation Rate werden **nie** gleichgesetzt.
-- Plattformen werden nie zu einem Gesamtwert vermischt, ohne die Einzelwerte weiterhin zu zeigen.
-- Wiederholte Runs sind ein Reliability-/Volatility-Signal, keine zusätzliche Stichprobe für punktgenaue Werte.
-- **Es wird keine Aussage getroffen, dass AI Visibility bereits Umsatz verursacht** — dafür fehlen echte
-  AI-Referral-Daten (siehe `business_impact_status` in `dashboard_aggregates.json` und die
-  Methodology-Seite im Dashboard).
-- Alle Daten sind synthetisch und durchgängig gekennzeichnet.
-- Es werden keine erfundenen Branchen-Benchmarks verwendet.
-
-## Future Roadmap
-
-Bewusst **nicht** simuliert oder als bereits funktionierend dargestellt:
-
-- API-basierte AI-Messungen statt manueller Prompt-Runs
-- Persistente Datenbank statt statischer JSON-Dateien
-- Authentifizierung & Multi-Tenant-Accounts
-- Automatisierte, geplante Prompt-Runs
-- GA4-Integration für echten Commerce-Kontext
-- AI-Referral-Tracking (Sessions/Conversions aus AI-Traffic)
-- Zeitliche Vergleiche über mehrere Quartale
-- Belastbare Business-Impact-Auswertung (AI Visibility → Revenue), sobald echte Referral-Daten vorliegen
+![AI Insights](screenshots/ai-insights.png)
 
 ---
 
-Portfolio-Projekt · synthetische Demo-Daten · kein reales Unternehmen.
+## Core Features
+
+### Commerce Performance
+
+Traditional e-commerce analysis including:
+
+* Revenue
+* Orders
+* Sessions
+* Conversion Rate
+* Average Order Value
+* ROAS
+* Marketing Spend
+* Returns
+* Product Performance
+* Funnel Analysis
+* Channel Performance
+
+---
+
+### AI Visibility Intelligence
+
+The project introduces several AI visibility metrics:
+
+* **Mention Rate** — how often NORTHWEAR appears in relevant AI responses
+* **Recommendation Rate** — how often the brand is actively recommended
+* **Citation Rate** — how often the NORTHWEAR website appears as a cited source
+* **AI Share of Voice** — NORTHWEAR's share of all measured brand mentions
+* **Average Position** — average ranking position when NORTHWEAR appears
+* **Custom AI Visibility Score** — combined project-specific visibility metric
+
+Results are analyzed separately for:
+
+* ChatGPT
+* Gemini
+* Perplexity
+
+This is important because different AI systems may produce different brands, recommendations and source patterns.
+
+---
+
+## Prompt Intelligence
+
+The dataset contains **100 buyer-oriented prompts** across five intent groups.
+
+### Discovery
+
+Example:
+
+> Which sustainable streetwear brands should I know?
+
+### Product Research
+
+Example:
+
+> Which sneakers under €120 are recommended?
+
+### Problem / Solution
+
+Example:
+
+> Which sneakers are suitable for walking in the city all day?
+
+### Comparison
+
+Example:
+
+> What are good alternatives to Brand X?
+
+### Purchase Intent
+
+Example:
+
+> Where can I buy high-quality sustainable sneakers online?
+
+Each prompt can be evaluated across multiple AI platforms and repeated measurement runs.
+
+---
+
+## Repeated Measurements & Volatility
+
+AI answers can vary even when the same prompt is repeated.
+
+For this reason, the demo dataset uses:
+
+**100 prompts × 3 AI platforms × 3 repeated runs = 900 AI measurements**
+
+The dashboard includes a **Volatility Score** and **Stability Score** to show how consistent results are across repeated measurements.
+
+This avoids treating one single AI response as a stable ranking.
+
+---
+
+## Competitor Intelligence
+
+The dashboard compares NORTHWEAR with fictional competitors using:
+
+* Overall AI Share of Voice
+* ChatGPT Share of Voice
+* Gemini Share of Voice
+* Perplexity Share of Voice
+* Brand rankings
+* Platform-specific competitive gaps
+
+Platform results remain separate instead of relying only on one blended metric.
+
+---
+
+## Source Intelligence
+
+AI visibility is not only about whether a brand is mentioned.
+
+It is also important to understand **which sources appear in AI responses**.
+
+The project therefore analyzes source patterns such as:
+
+* Own website
+* Community platforms
+* Editorial websites
+* Product comparison sites
+* Video platforms
+
+The goal is to identify situations such as:
+
+> A brand may have a strong Mention Rate while its own website is rarely cited.
+
+This creates a potential **Citation Gap** and a clear content opportunity.
+
+---
+
+## Rule-Based Intelligence Engine
+
+The project includes a transparent rule-based intelligence layer.
+
+Instead of displaying only raw metrics, the system derives prioritized findings such as:
+
+* Citation gaps
+* Recommendation gaps
+* Platform visibility gaps
+* Prompt opportunities
+* Source opportunities
+* Competitor gaps
+* Measurement volatility
+
+Each insight contains:
+
+* Priority
+* Finding
+* Evidence
+* Related metric
+* Opportunity score
+* Recommended action
+
+The logic is deliberately transparent rather than presented as an opaque AI prediction.
+
+---
+
+## Custom AI Visibility Score
+
+The **NORTHWEAR Cockpit Score** is a custom project metric.
+
+It is **not an industry standard**.
+
+Version 1 uses the following weighting:
+
+| Metric              | Weight |
+| ------------------- | -----: |
+| Mention Rate        |    30% |
+| Recommendation Rate |    25% |
+| AI Share of Voice   |    20% |
+| Citation Rate       |    15% |
+| Position Score      |    10% |
+
+The weighting can be adjusted in future versions as the measurement methodology evolves.
+
+---
+
+## Demo Dataset
+
+The fictional NORTHWEAR dataset contains:
+
+| Dataset                  |     Scope |
+| ------------------------ | --------: |
+| Products                 |        24 |
+| Commerce history         | 12 months |
+| Marketing channels       |         5 |
+| Buyer prompts            |       100 |
+| AI platforms             |         3 |
+| Runs per prompt/platform |         3 |
+| AI measurements          |       900 |
+
+### Marketing Channels
+
+* Organic
+* Google Ads
+* Direct
+* Social
+* Email
+
+All data is synthetic and used exclusively to demonstrate the dashboard architecture and analytical methodology.
+
+---
+
+## Business Impact Guardrail
+
+The current version intentionally **does not claim that AI visibility causes revenue growth**.
+
+A relationship such as:
+
+```text
+AI Visibility
+      ↓
+AI Referral Traffic
+      ↓
+Product Views
+      ↓
+Orders
+      ↓
+Revenue
+```
+
+would require additional real-world data such as:
+
+* longitudinal AI visibility measurements
+* AI referral traffic
+* analytics data
+* conversion tracking
+* intervention periods
+
+The current project treats this as a future measurement framework rather than a proven causal relationship.
+
+---
+
+## Tech Stack
+
+* **Next.js**
+* **TypeScript**
+* **Tailwind CSS**
+* **Recharts**
+* **Git**
+* **GitHub**
+* **Vercel**
+
+The application currently works with static CSV and JSON datasets so that the portfolio version can run without paid infrastructure.
+
+---
+
+## Project Structure
+
+```text
+ai-commerce-intelligence-cockpit/
+├── data/
+├── screenshots/
+├── src/
+├── .gitignore
+├── next.config.js
+├── package.json
+├── tailwind.config.ts
+├── tsconfig.json
+└── README.md
+```
+
+---
+
+## Methodology Principles
+
+The project follows several methodological rules:
+
+1. **Mention Rate and Citation Rate are separate metrics.**
+2. **AI platforms are analyzed individually.**
+3. **Repeated measurements are used to expose volatility.**
+4. **The custom Visibility Score is clearly identified as project-specific.**
+5. **Synthetic data is explicitly labelled.**
+6. **No unsupported AI Visibility → Revenue causality is claimed.**
+7. **Recommendations are derived from transparent rules and measurable gaps.**
+
+---
+
+## Future Roadmap
+
+Possible next development stages include:
+
+* URL-based company and website audits
+* AI Readiness scoring
+* Real AI measurement integrations
+* Scheduled prompt monitoring
+* Historical visibility trends
+* GA4 / AI referral tracking
+* Search Console integration
+* Shopify / Shopware / WooCommerce integrations
+* Database-backed measurement history
+* Multi-company dashboards
+* Automated reporting
+
+---
+
+## Why I Built This
+
+The project was created as a portfolio case at the intersection of:
+
+**E-Commerce · Analytics · SEO/GEO · AI Visibility · Data Visualization**
+
+The goal was not simply to build another dashboard, but to design a measurement framework that explores how traditional commerce performance and emerging AI-driven customer discovery could be analyzed together.
+
+---
+
+## Disclaimer
+
+NORTHWEAR and all competitors shown in this project are fictional demonstration brands.
+
+Commerce performance, AI responses, citations, rankings and visibility measurements are synthetic demo data and should not be interpreted as real measurements from ChatGPT, Gemini, Perplexity or any real company.
+
+---
+
+**Live Demo:**
+https://ai-commerce-intelligence-cockpit.vercel.app/

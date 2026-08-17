@@ -1,0 +1,437 @@
+{
+  "project": "AI Commerce Intelligence Cockpit",
+  "brand": "NORTHWEAR",
+  "data_status": "synthetic_demo",
+  "methodology": {
+    "visibility_score": {
+      "type": "custom_cockpit_score",
+      "weights": {
+        "mention_rate": 0.3,
+        "recommendation_rate": 0.25,
+        "share_of_voice": 0.2,
+        "citation_rate": 0.15,
+        "position_score": 0.1
+      }
+    },
+    "repeat_measurements": 3,
+    "platforms": [
+      "ChatGPT",
+      "Gemini",
+      "Perplexity"
+    ]
+  },
+  "overview": {
+    "mention_rate": 0.7222222222222222,
+    "recommendation_rate": 0.6022222222222222,
+    "citation_rate": 0.29333333333333333,
+    "average_position": 2.3430769230769233,
+    "position_score": 0.7313846153846153,
+    "share_of_voice": 0.16518424396442186,
+    "visibility_score": 0.5173975325535681
+  },
+  "platforms": {
+    "ChatGPT": {
+      "measurements": 300,
+      "mention_rate": 0.7266666666666667,
+      "recommendation_rate": 0.63,
+      "citation_rate": 0.27,
+      "avg_position": 2.353211009174312,
+      "position_score": 0.7293577981651376,
+      "share_of_voice": 0.16515151515151516,
+      "visibility_score": 0.5219660828468168
+    },
+    "Gemini": {
+      "measurements": 300,
+      "mention_rate": 0.6333333333333333,
+      "recommendation_rate": 0.5,
+      "citation_rate": 0.18,
+      "avg_position": 2.4263157894736844,
+      "position_score": 0.7147368421052631,
+      "share_of_voice": 0.1483216237314598,
+      "visibility_score": 0.4431380089568182
+    },
+    "Perplexity": {
+      "measurements": 300,
+      "mention_rate": 0.8066666666666666,
+      "recommendation_rate": 0.6766666666666666,
+      "citation_rate": 0.43,
+      "avg_position": 2.268595041322314,
+      "position_score": 0.7462809917355372,
+      "share_of_voice": 0.18140929535232383,
+      "visibility_score": 0.5865766249106852
+    }
+  },
+  "prompt_groups": {
+    "Discovery": {
+      "measurements": 180,
+      "mention_rate": 0.7,
+      "recommendation_rate": 0.6,
+      "citation_rate": 0.2111111111111111,
+      "avg_position": 2.373015873015873,
+      "share_of_voice": 0.16195372750642673,
+      "visibility_score": 0.4965970947076346
+    },
+    "Product": {
+      "measurements": 180,
+      "mention_rate": 0.7333333333333333,
+      "recommendation_rate": 0.5944444444444444,
+      "citation_rate": 0.3888888888888889,
+      "avg_position": 2.3106060606060606,
+      "share_of_voice": 0.16793893129770993,
+      "visibility_score": 0.5343201094918653
+    },
+    "Problem": {
+      "measurements": 180,
+      "mention_rate": 0.6555555555555556,
+      "recommendation_rate": 0.5722222222222222,
+      "citation_rate": 0.22777777777777777,
+      "avg_position": 2.3220338983050848,
+      "share_of_voice": 0.15012722646310434,
+      "visibility_score": 0.47747365621540805
+    },
+    "Comparison": {
+      "measurements": 180,
+      "mention_rate": 0.7444444444444445,
+      "recommendation_rate": 0.5833333333333334,
+      "citation_rate": 0.3,
+      "avg_position": 2.298507462686567,
+      "share_of_voice": 0.16897856242118536,
+      "visibility_score": 0.5219922298971723
+    },
+    "Purchase Intent": {
+      "measurements": 180,
+      "mention_rate": 0.7777777777777778,
+      "recommendation_rate": 0.6611111111111111,
+      "citation_rate": 0.3388888888888889,
+      "avg_position": 2.407142857142857,
+      "share_of_voice": 0.17676767676767677,
+      "visibility_score": 0.5566551226551227
+    }
+  },
+  "competitors": [
+    {
+      "brand": "NORTHWEAR",
+      "mentions": 650,
+      "overall_sov": 0.16518424396442186,
+      "chatgpt_sov": 0.16515151515151516,
+      "gemini_sov": 0.1483216237314598,
+      "perplexity_sov": 0.18140929535232383
+    },
+    {
+      "brand": "URBANROOT",
+      "mentions": 561,
+      "overall_sov": 0.142566709021601,
+      "chatgpt_sov": 0.14696969696969697,
+      "gemini_sov": 0.14754098360655737,
+      "perplexity_sov": 0.13343328335832083
+    },
+    {
+      "brand": "GREYWAVE",
+      "mentions": 559,
+      "overall_sov": 0.1420584498094028,
+      "chatgpt_sov": 0.13333333333333333,
+      "gemini_sov": 0.14285714285714285,
+      "perplexity_sov": 0.14992503748125938
+    },
+    {
+      "brand": "FIELDEN",
+      "mentions": 557,
+      "overall_sov": 0.14155019059720458,
+      "chatgpt_sov": 0.1409090909090909,
+      "gemini_sov": 0.156128024980484,
+      "perplexity_sov": 0.12818590704647675
+    },
+    {
+      "brand": "KINETIC",
+      "mentions": 544,
+      "overall_sov": 0.13824650571791613,
+      "chatgpt_sov": 0.13106060606060607,
+      "gemini_sov": 0.1444184231069477,
+      "perplexity_sov": 0.13943028485757122
+    },
+    {
+      "brand": "SABLE",
+      "mentions": 535,
+      "overall_sov": 0.13595933926302414,
+      "chatgpt_sov": 0.14166666666666666,
+      "gemini_sov": 0.12958626073380172,
+      "perplexity_sov": 0.136431784107946
+    },
+    {
+      "brand": "VELA",
+      "mentions": 529,
+      "overall_sov": 0.13443456162642947,
+      "chatgpt_sov": 0.1409090909090909,
+      "gemini_sov": 0.13114754098360656,
+      "perplexity_sov": 0.13118440779610194
+    }
+  ],
+  "sources": [
+    {
+      "domain": "northwear.de",
+      "citations": 591,
+      "citation_share": 0.20964881163533167,
+      "chatgpt": 198,
+      "gemini": 182,
+      "perplexity": 211,
+      "northwear_mention_association": 461,
+      "northwear_recommendation_association": 385,
+      "source_type": "Owned"
+    },
+    {
+      "domain": "reddit.com",
+      "citations": 457,
+      "citation_share": 0.16211422490244767,
+      "chatgpt": 155,
+      "gemini": 165,
+      "perplexity": 137,
+      "northwear_mention_association": 329,
+      "northwear_recommendation_association": 283,
+      "source_type": "Community"
+    },
+    {
+      "domain": "youtube.com",
+      "citations": 442,
+      "citation_share": 0.15679318907413978,
+      "chatgpt": 134,
+      "gemini": 153,
+      "perplexity": 155,
+      "northwear_mention_association": 311,
+      "northwear_recommendation_association": 262,
+      "source_type": "Video"
+    },
+    {
+      "domain": "urbanwear-mag.de",
+      "citations": 307,
+      "citation_share": 0.10890386661936857,
+      "chatgpt": 162,
+      "gemini": 0,
+      "perplexity": 145,
+      "northwear_mention_association": 225,
+      "northwear_recommendation_association": 193,
+      "source_type": "Third-party"
+    },
+    {
+      "domain": "vergleichsportal.de",
+      "citations": 297,
+      "citation_share": 0.10535650940049664,
+      "chatgpt": 0,
+      "gemini": 138,
+      "perplexity": 159,
+      "northwear_mention_association": 204,
+      "northwear_recommendation_association": 168,
+      "source_type": "Third-party"
+    },
+    {
+      "domain": "productcheck.de",
+      "citations": 274,
+      "citation_share": 0.09719758779709117,
+      "chatgpt": 147,
+      "gemini": 0,
+      "perplexity": 127,
+      "northwear_mention_association": 198,
+      "northwear_recommendation_association": 172,
+      "source_type": "Third-party"
+    },
+    {
+      "domain": "shopping-guide.de",
+      "citations": 157,
+      "citation_share": 0.055693508336289464,
+      "chatgpt": 0,
+      "gemini": 157,
+      "perplexity": 0,
+      "northwear_mention_association": 104,
+      "northwear_recommendation_association": 81,
+      "source_type": "Third-party"
+    },
+    {
+      "domain": "styleguide.de",
+      "citations": 147,
+      "citation_share": 0.05214615111741752,
+      "chatgpt": 147,
+      "gemini": 0,
+      "perplexity": 0,
+      "northwear_mention_association": 107,
+      "northwear_recommendation_association": 98,
+      "source_type": "Third-party"
+    },
+    {
+      "domain": "streetstyle-blog.de",
+      "citations": 147,
+      "citation_share": 0.05214615111741752,
+      "chatgpt": 0,
+      "gemini": 147,
+      "perplexity": 0,
+      "northwear_mention_association": 85,
+      "northwear_recommendation_association": 66,
+      "source_type": "Third-party"
+    }
+  ],
+  "commerce_monthly": [
+    {
+      "month": "2025-09-01",
+      "sessions": 22396,
+      "orders": 835,
+      "revenue": 75221.9,
+      "spend": 7358.51,
+      "conversion": 0.03728344347204858,
+      "aov": 90.08610778443114,
+      "roas": 10.222436335616855,
+      "returns": 68,
+      "return_rate": 0.081437125748503,
+      "net_revenue": 69818.59
+    },
+    {
+      "month": "2025-10-01",
+      "sessions": 23818,
+      "orders": 876,
+      "revenue": 78956.87,
+      "spend": 8189.25,
+      "conversion": 0.03677890670921152,
+      "aov": 90.13341324200913,
+      "roas": 9.641526391305675,
+      "returns": 74,
+      "return_rate": 0.08447488584474885,
+      "net_revenue": 72842.69
+    },
+    {
+      "month": "2025-11-01",
+      "sessions": 28446,
+      "orders": 1110,
+      "revenue": 98586.69,
+      "spend": 10415.94,
+      "conversion": 0.039021303522463614,
+      "aov": 88.81683783783784,
+      "roas": 9.464982517180399,
+      "returns": 103,
+      "return_rate": 0.09279279279279279,
+      "net_revenue": 90332.25
+    },
+    {
+      "month": "2025-12-01",
+      "sessions": 33950,
+      "orders": 1386,
+      "revenue": 123696.23000000001,
+      "spend": 12657.35,
+      "conversion": 0.04082474226804124,
+      "aov": 89.2469191919192,
+      "roas": 9.772679905351437,
+      "returns": 120,
+      "return_rate": 0.08658008658008658,
+      "net_revenue": 113882.24
+    },
+    {
+      "month": "2026-01-01",
+      "sessions": 25071,
+      "orders": 923,
+      "revenue": 82846.97,
+      "spend": 8550.17,
+      "conversion": 0.03681544413864624,
+      "aov": 89.75836403033587,
+      "roas": 9.68951143661471,
+      "returns": 83,
+      "return_rate": 0.08992416034669556,
+      "net_revenue": 76377.19
+    },
+    {
+      "month": "2026-02-01",
+      "sessions": 26100,
+      "orders": 971,
+      "revenue": 87586.95,
+      "spend": 8350.07,
+      "conversion": 0.037203065134099614,
+      "aov": 90.20283213182286,
+      "roas": 10.489367155005887,
+      "returns": 93,
+      "return_rate": 0.09577754891864057,
+      "net_revenue": 80027.97
+    },
+    {
+      "month": "2026-03-01",
+      "sessions": 27881,
+      "orders": 1025,
+      "revenue": 91397.97,
+      "spend": 9378.97,
+      "conversion": 0.03676338725296797,
+      "aov": 89.1687512195122,
+      "roas": 9.744990121516542,
+      "returns": 96,
+      "return_rate": 0.09365853658536585,
+      "net_revenue": 83891.96
+    },
+    {
+      "month": "2026-04-01",
+      "sessions": 28810,
+      "orders": 1126,
+      "revenue": 104055.5,
+      "spend": 10577.15,
+      "conversion": 0.039083651509892396,
+      "aov": 92.41163410301954,
+      "roas": 9.837763480710779,
+      "returns": 105,
+      "return_rate": 0.09325044404973357,
+      "net_revenue": 95176.48
+    },
+    {
+      "month": "2026-05-01",
+      "sessions": 30852,
+      "orders": 1188,
+      "revenue": 106552.22,
+      "spend": 10257.28,
+      "conversion": 0.038506417736289385,
+      "aov": 89.69042087542087,
+      "roas": 10.38796055094528,
+      "returns": 114,
+      "return_rate": 0.09595959595959595,
+      "net_revenue": 97599.71
+    },
+    {
+      "month": "2026-06-01",
+      "sessions": 30986,
+      "orders": 1206,
+      "revenue": 110173.9,
+      "spend": 10733.7,
+      "conversion": 0.0389208029432647,
+      "aov": 91.35480928689883,
+      "roas": 10.26429842458798,
+      "returns": 116,
+      "return_rate": 0.09618573797678276,
+      "net_revenue": 100863.62999999999
+    },
+    {
+      "month": "2026-07-01",
+      "sessions": 32930,
+      "orders": 1223,
+      "revenue": 110052.9,
+      "spend": 10425.96,
+      "conversion": 0.03713938657758883,
+      "aov": 89.98601798855273,
+      "roas": 10.555661061427438,
+      "returns": 113,
+      "return_rate": 0.09239574816026165,
+      "net_revenue": 100788.87999999999
+    },
+    {
+      "month": "2026-08-01",
+      "sessions": 34759,
+      "orders": 1354,
+      "revenue": 120617.09,
+      "spend": 11169.44,
+      "conversion": 0.038953939986766016,
+      "aov": 89.0820457902511,
+      "roas": 10.798848465097622,
+      "returns": 127,
+      "return_rate": 0.09379615952732644,
+      "net_revenue": 110439.75
+    }
+  ],
+  "business_impact_status": {
+    "causal_claim_ready": false,
+    "missing": [
+      "longitudinal AI visibility",
+      "AI referral sessions",
+      "AI referral conversions",
+      "intervention logging"
+    ]
+  }
+}
